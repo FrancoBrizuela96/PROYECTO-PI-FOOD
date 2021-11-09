@@ -1,0 +1,32 @@
+body {
+    background-image: url('../../assets/landingImage.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.buttonEAT{
+    background-color: black;
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 100px;
+    width: 300px;
+    padding: 40px;
+    color: #24cec8;
+    font-family: cursive;
+    font-weight: 400;
+    border: 5px solid #24cec8;
+    cursor: pointer;
+}
+.buttonEAT:hover{
+    box-shadow: 0 3px 20px 0 #24cec8 inset, 0 3px 20px 0 #24cec8,
+                0 3px 20px 0 #24cec8 inset, 0 3px 20px 0 #24cec8;
+    text-shadow:0 3px 20px 0 #24cec8, 0 0 3px#24cec8
+}

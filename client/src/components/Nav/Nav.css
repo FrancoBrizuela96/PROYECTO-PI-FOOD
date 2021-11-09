@@ -1,0 +1,62 @@
+.navBar{
+    color: #FFF;
+    background-color: rgba(255, 160, 122, 0.733);
+    padding: 3px;
+    box-shadow: 0 4px 18px 0px rgb(0 0 0 / 12%), 0 7px 10px -5px rgb(0 0 0 / 15%);
+    height: 65px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+.buttonNavBar{
+    cursor: pointer;
+    padding: 10px 50px;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    color: #999;
+    line-height: 0.5;
+    background-color: rgba(255, 255, 255, 0.842);
+    font-size: 18px;
+    font-weight: 400;
+    will-change: box-shadow, transform;
+    text-transform: uppercase;
+    padding-top: 30px;
+    box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    justify-content: center;
+    font-family: "Roboto";
+}
+.buttonNavBar:hover {
+    box-shadow: 0 3px 20px 0 #209e30a6 inset, 0 3px 20px 0 #778181,
+                0 3px 20px 0 #778181 inset, 0 3px 20px 0 #778181;
+}
+.searchBar{
+      position: relative;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      width: 30%;
+      line-height: 1.42857143;
+      text-align: left;
+      display: inline-flex;
+      border-radius: 30px;
+      background-color: rgba(255, 255, 255, 0.911);
+      border: none;
+      padding: 12px 30px;
+      box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%) ;
+      min-height: auto;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) ;
+      will-change: box-shadow, transform;
+      vertical-align: middle;
+      min-width: 220px;
+}
+.searchBar:hover{
+    box-shadow: 0 3px 20px 0 #209e30a6  inset, 0 3px 20px 0 #778181,
+                0 3px 20px 0 #778181 inset, 0 3px 20px 0 #778181;
+}

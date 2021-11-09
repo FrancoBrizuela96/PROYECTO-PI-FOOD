@@ -1,0 +1,40 @@
+.CardContainer {
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: rgba(15, 15, 15, 0.733);
+    padding-top: 10px;
+    border-radius: 30px;
+}
+.filtersContainer{
+    position: relative;
+    margin-left: 25%;
+    width: 50%;
+    height: 40px;
+    margin-top: 84px;
+    background-color: rgba(17, 16, 16, 0.664);
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid gray;
+}
+.FilterTEXT {
+    color: #FFF;
+    margin-left: 10px;
+    width: 80px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.selectAscDesc{
+    color: gray;
+    height: 28px;
+    border-radius: 12px;
+}
+.selectAscDesc:hover{
+    color: black;
+    background-color: rgba(255, 160, 122, 0.733);
+}

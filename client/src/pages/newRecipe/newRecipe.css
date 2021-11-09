@@ -1,0 +1,92 @@
+.newRecipeContainer{
+    background-color: rgba(255, 255, 255, 0.781);
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 30px;
+    height: 85vh;
+    margin-top: 120px;
+}
+.createRecipeTitle{
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 50px;
+}
+.labelForm {
+    text-align: right;
+    font-size: 25px;
+    font-family: 'Roboto';
+    margin-right: 6%;
+}
+.inputsContainer{
+    margin-top: 1%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.inputForm{
+    width: 68%;
+}
+.selectForm{
+    font-size: 20px;
+}
+.listDiet{
+    font-size: 20px;
+    margin-top: 1.5%;
+    text-align: right;
+}
+.buttonDelete{
+    background-color: red;
+    margin-left: 1.5%;
+    border-radius: 100%;
+    cursor: pointer;
+    color: white;
+    border: 1px solid thistle;
+}
+.buttonDelete:hover{
+    background-color: honeydew;
+    color: red;
+    border: 1px solid black;
+}
+.buttonCreateRecipe{
+    margin-top: 50px;
+    background-color: greenyellow;
+    position: absolute;
+    right: 45%;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 25px;
+    height: 55px;
+    border-radius: 17px;
+    cursor: pointer;
+    border: 2.5px solid black;
+}
+.errorForm{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40%;
+    color: red;
+    font-family: 'Roboto';
+    margin-left: 90%;
+    align-items: center;
+    text-align: center;
+}
+.errorFormSummary{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40%;
+    color: red;
+    font-family: 'Roboto';
+    margin-left: 93.5%;
+    align-items: center;
+    text-align: center;
+}
+.errorFormHealth{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40%;
+    color: red;
+    font-family: 'Roboto';
+    margin-left: 95.5%;
+    align-items: center;
+    text-align: center;
+}
