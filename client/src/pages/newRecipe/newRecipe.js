@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllDiets, postNewRecipe } from "../../actions";
 import Nav from "../../components/Nav/Nav";
+import { firstLetterToCaps } from "../../helpers/firstLetterToCaps";
 import './newRecipe.css'
 
 const validateInput = (input) => {
@@ -19,7 +20,6 @@ const validateInput = (input) => {
   }
   return errors
 }
-
 function NewRecipe() {
   const dispatch = useDispatch()
   const diets = useSelector(state => state.diets)
@@ -114,11 +114,11 @@ function NewRecipe() {
           <div className='inputsContainer'>
             <label className='labelForm'>Choose Diets from the List:</label>    
             <select onChange={handleSelect} className='selectForm'>
-             {diets.map(diet => <option value={diet.name}>{diet.name}</option>)}
+             {diets.map(diet => <option value={diet.name}>{firstLetterToCaps(diet.name)}</option>)}
             </select>
           </div>
           <ul className='inputsContainer'>
-            {input.diets.map(diet =>  <li className='listDiet'>{diet}<button className='buttonDelete' value={diet} onClick={handleDelete}>X</button></li> )}
+            {input.diets.map(diet =>  <li className='listDiet'>{firstLetterToCaps(diet)}<button className='buttonDelete' value={diet} onClick={handleDelete}>X</button></li> )}
           </ul>
           <button disabled={Object.keys(errors).length > 0} type='submit' className='buttonCreateRecipe'>Create Recipe !</button>
         </form>

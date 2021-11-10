@@ -13,7 +13,7 @@ function DetailedRecipePage() {
     
     useEffect(() => {
       dispatch(getRecipeDetails(idRecipe))
-    }, [dispatch])
+    }, [dispatch, idRecipe])
     
     return (
       <div>

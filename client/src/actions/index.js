@@ -69,3 +69,10 @@ export const postNewRecipe = (character) => {
         return json;
     }
 }
+
+export const clearRecipeDetail = () => {
+    return {
+        type: 'CLEAR_DETAILED',
+        payload: null
+    }
+}

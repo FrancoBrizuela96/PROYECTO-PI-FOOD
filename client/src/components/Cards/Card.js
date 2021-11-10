@@ -8,7 +8,7 @@ export function Card({recipe}) {
           <div className='card'>
             <Link to={`/recipe/${recipe.id}`} style={{textDecoration:'none'}}>
               <p className='cardTitle'>{recipe.title}</p>
-              <img src={recipe.image} className='cardImage'/>
+              <img src={recipe.image} className='cardImage' alt='Img not found'/>
             </Link> 
             <p className='dietsText'>
               {'Diets: ' + recipe.diets.join(', ')}

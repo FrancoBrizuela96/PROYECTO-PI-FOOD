@@ -15,8 +15,9 @@ const {
 router.get('/', async (req, res, next) => {
     try {
         const {name} = req.query;
-        const recipesFromApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY4}&addRecipeInformation=true&number=100`);
-        const recipesFromDB = await Recipes.findAll({include: Diets}) 
+        const recipesFromApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY2}&addRecipeInformation=true&number=100`);
+        const recipesFromDB = await Recipes.findAll({include: Diets})
+        const allDiets = []  
         const recipesFilteredDB = recipesFromDB.map(recipe => {
             return {
                 id: recipe.id,
@@ -50,14 +51,26 @@ router.get('/', async (req, res, next) => {
                     score: recipe.spoonacularScore,
                 }
             })
+            filteredFromAPI.forEach(recipe => {
+                recipe.diets.forEach(diet => {
+                    if(!allDiets.includes(diet)) allDiets.push(diet)
+                })        
+            })
+            allDiets.forEach(diet => {
+                Diets.findOrCreate({
+                    where: {
+                        name: diet
+                    }
+                })
+            })
             return allRecipes = [...recipesDB, ...filteredFromAPI]
         })
         .then( fullRecipes => {
             if(name) {
                 const filter = fullRecipes.filter( recipe => recipe.title?.toLowerCase().includes(name.toLowerCase()) )
-                res.json(filter)
+                res.send(filter)
             } else {
-                res.json(fullRecipes)
+                res.send(fullRecipes)
             }
         })
     } catch (error) {
@@ -70,7 +83,7 @@ router.get('/:idReceta', async (req, res, next) => {
     
     try {
         if(idReceta.length < 20 ) {
-            const recipesFromApi = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=${API_KEY4}`);
+            const recipesFromApi = await axios.get(`https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=${API_KEY2}`);
             const recipe = recipesFromApi.data
             if (recipe.vegetarian && !recipe.diets.includes('vegetarian')) {
                 recipe.diets = [...recipe.diets, 'vegetarian']

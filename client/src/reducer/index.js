@@ -66,6 +66,11 @@ const recipes = (state = initialState, action) => {
                 ...state,
                 diets: action.payload
             }
+        case 'CLEAR_DETAILED':
+            return {
+                ...state,
+                recipeDetailed: {}
+            }
         default:
             return state;        
     }

@@ -5,7 +5,7 @@ import Card from "../../components/Cards/Card";
 import './homePage.css'
 import { getAllRecipes, filterRecipesByDiet, filterRecipesByScore, filterRecipesAscDesc, getAllDiets } from "../../actions";
 import { Paginado } from "../../components/Paginado/Paginado";
-
+import { firstLetterToCaps } from "../../helpers/firstLetterToCaps";
 const HomePage =  () => {
   const dispatch = useDispatch();
   const allRecipes = useSelector( (state) => state.recipes );
@@ -16,14 +16,6 @@ const HomePage =  () => {
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
   const currentRecipes = allRecipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
-
-
-  const firstLetterToCaps = (sentence) => {
-    const wordsArray = sentence.split(' ')
-    const modifiedArray = wordsArray.map(word => word[0].toUpperCase() + word.slice(1))
-    return modifiedArray.join(' ')
-  }
-  
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
@@ -49,6 +41,12 @@ const HomePage =  () => {
     dispatch(filterRecipesAscDesc(event.target.value))
     setCurrentPage(1)
     setOrden(`Ordenado${event.target.value}`)
+    console.log(orden)
+  }
+
+  const handleReset = (event) => {
+    event.preventDefault();
+    dispatch(getAllRecipes())
   }
   return (
     <div>
@@ -72,6 +70,7 @@ const HomePage =  () => {
             <option value='higher score'>Higher Score</option>
             <option value='lower score'>Lower Score</option>
       </select>
+      <button className='selectAscDesc' onClick={handleReset}>Reset Filters</button>
       </div>
       <div className='CardContainer'>
           {currentRecipes?.map(recipe => 

@@ -16,21 +16,6 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 router.get('/types', async (req, res, next) => {
     
-    const recipesFromApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY4}&addRecipeInformation=true&number=100`);
-    const allDiets = [] 
-    recipesFromApi.data.results.forEach(recipe => {
-        recipe.diets.forEach(diet => {
-            if(!allDiets.includes(diet)) allDiets.push(diet)
-        })        
-    })
-    allDiets.forEach(diet => {
-        Diets.findOrCreate({
-            where: {
-                name: diet
-            }
-        })
-    })
-
         return Diets.findAll()
         .then((diet) => {
             res.send(diet)
@@ -38,7 +23,7 @@ router.get('/types', async (req, res, next) => {
         .catch((error) => {
             next(error)
         })
-    })
+})
 
 router.post('/', async (req, res, next) => {
     try {

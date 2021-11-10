@@ -13,6 +13,7 @@
     z-index: 100;
 }
 .buttonNavBar{
+    border: 1px solid rgba(0, 0, 0, 0.63);
     cursor: pointer;
     padding: 10px 50px;
     border-radius: 30px;
@@ -38,6 +39,7 @@
 }
 .searchBar{
       position: relative;
+      text-decoration: none;
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
@@ -47,8 +49,9 @@
       display: inline-flex;
       border-radius: 30px;
       background-color: rgba(255, 255, 255, 0.911);
-      border: none;
+      border: 1px solid black;
       padding: 12px 30px;
+      height: 40px;
       box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%) ;
       min-height: auto;
       transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) ;
@@ -59,4 +62,35 @@
 .searchBar:hover{
     box-shadow: 0 3px 20px 0 #209e30a6  inset, 0 3px 20px 0 #778181,
                 0 3px 20px 0 #778181 inset, 0 3px 20px 0 #778181;
+}
+.searchBarContainer{
+    position: relative;
+    vertical-align: middle;
+    width: 30%;
+    line-height: 60px;
+}
+.searchButton{
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    color: #999;
+    line-height: 1;
+    background-color: rgba(255, 255, 255, 0.842);
+    font-size: 14px;
+    height: 40px;
+    font-weight: 400;
+    will-change: box-shadow, transform;
+    text-transform: uppercase;
+    box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    vertical-align: middle;
+    font-family: "Roboto";
+    margin-left: 5px;
+}
+.searchButton:hover{
+        box-shadow: 0 3px 20px 0 #209e30a6  inset, 0 3px 20px 0 #778181,
+                    0 3px 20px 0 #778181 inset, 0 3px 20px 0 #778181;
 }
